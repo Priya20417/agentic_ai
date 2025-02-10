@@ -1,7 +1,6 @@
 import streamlit as st
 from src import router_workflow
 
-# Emojis for visual enhancement
 AGENT_EMOJIS = {
     "calendar_manager": "📅",  # Calendar emoji
     "email_manager": "📧",  # Email emoji
