@@ -15,6 +15,7 @@ from IPython.display import Image, display
 import base64
 from pydantic import BaseModel, Field
 
+#Please update the Google Gemini API Key
 os.environ["GOOGLE_API_KEY"] = ""
 
 llm = ChatGoogleGenerativeAI(
