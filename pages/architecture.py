@@ -2,19 +2,15 @@ import streamlit as st
 from src import router_workflow
 from IPython.display import Image
 
-# Set Page Title and Layout
 st.set_page_config(page_title="AI Workflow Architecture", layout="wide")
 
-# Sidebar for additional controls
 st.sidebar.header("Settings")
 theme = st.sidebar.selectbox("Select Theme", ["Light", "Dark"])
 toggle_agents = st.sidebar.checkbox("Show Agent Descriptions", value=True)
 
-# Main Page Title
 st.title("🚀 AI Assistant Workflow Architecture")
 st.subheader("Visualizing the Routing Structure of Agents")
 
-# Improved Graph Display with LangGraph Integration
 st.markdown(
     """
     <style>
@@ -31,13 +27,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Generate the workflow graph image
 graph_image = router_workflow.get_graph().draw_mermaid_png()
 
-# Display the graph with better visuals
 st.image(graph_image, caption="🛠 Workflow Routing Diagram", use_container_width=True)
 
-# Agent Descriptions (Optional)
 if toggle_agents:
     with st.expander("🤖 **Meet Your AI Agents**", expanded=True):
         st.write(
@@ -60,5 +53,4 @@ if toggle_agents:
         """
         )
 
-# Footer
 st.markdown("---")
